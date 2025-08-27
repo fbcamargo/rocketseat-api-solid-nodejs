@@ -35,7 +35,7 @@ describe('Register Service', () => {
       password: await hash('123456', 6),
     })
 
-    expect(() =>
+    await expect(() =>
       sut.create({
         email: 'johndoe@example.wrong.com',
         password: '1234567',
@@ -51,7 +51,7 @@ describe('Register Service', () => {
       password: await hash('123456', 6),
     })
 
-    expect(() =>
+    await expect(() =>
       sut.create({
         email: 'johndoe@example.com',
         password: '1234567',
